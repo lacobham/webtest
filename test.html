@@ -15,16 +15,16 @@
         zoom: 5 // starting zoom
   });
  map.on('load', () => {
-        map.addSource('test', {
+        map.addSource('Polygon', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
             data: 'data/polygon.geojson'
         });
 
         map.addLayer({
-            'id': 'test',
+            'id': 'Polygon',
             'type': 'fill',
-            'source': 'data/polygon.geojson', // reference the data source
+            'source': 'Polygon', // reference the data source
             'layout': {},
             'paint': {
                 'fill-color': '#0080ff', // blue color fill
@@ -32,7 +32,6 @@
             }
         });
  });
-
 </script>
 
 </body>
