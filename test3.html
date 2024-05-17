@@ -11,13 +11,6 @@ body { margin: 0; padding: 0; }
 <body>
 <style>
   .legend-ctrl {
-  /* 
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: 1000;
-  margin-bottom: 30px;
-  */
   margin-right: 10px;
   background: white;
   border-radius: 5px;
@@ -271,17 +264,15 @@ map.on('load', () => {
         this._map = map;
         this._container = document.createElement('div');
         this._container.className = 'legend-ctrl';
-        this._container.innerHTML = 'Hi!';
+        this._container.innerHTML = '1 2 3 4 5 6 7 8 9';
         return this._container;
       }
-
       onRemove() {
         this._container.parentNode.removeChild(this._container);
         this._map = undefined;
       }
     }
-
-    map.addControl(new LegendControl(), 'top-left');
+    map.addControl(new LegendControl(), 'bottom-right');
 </script>
 
 </body>
