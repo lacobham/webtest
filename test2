@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<head>
+<!--Mapbox-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<style>
+    .mapboxgl-popup {
+        max-width: 400px;
+        font:
+            12px/20px 'Helvetica Neue',
+            Arial,
+            Helvetica,
+            sans-serif;
+    }
+</style>
+</head>
+<body>
+<div id='map' style='width: 1000px; height: 1000px;'></div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFyYmMiLCJhIjoiY2x3YXhrejYzMGswcTJxcHFwMjZkZmdocCJ9.6HNj3dTSlXvAKuIPoplvrA';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v11', // style URL
+        center: [-78.6977778, 44.3746760], // starting position
+        zoom: 9, // starting zoom
+  });
+ map.on('load', () => {
+        map.addSource('Rank 1', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/polygon.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 1',
+            'type': 'fill',
+            'source': 'Rank 1',
+            'layout': {},
+            'paint': {
+                'fill-color': '#A50026',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+ map.on('load', () => {
+        map.addSource('Rank 2', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank2.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 2',
+            'type': 'fill',
+            'source': 'Rank 2',
+            'layout': {},
+            'paint': {
+                'fill-color': '#DE3F2E',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+ map.on('load', () => {
+        map.addSource('Rank 3', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank3.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 3',
+            'type': 'fill',
+            'source': 'Rank 3',
+            'layout': {},
+            'paint': {
+                'fill-color': '#F88E52',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+ map.on('load', () => {
+        map.addSource('Rank 4', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank4.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 4',
+            'type': 'fill',
+            'source': 'Rank 4',
+            'layout': {},
+            'paint': {
+                'fill-color': '#FED480',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+map.on('load', () => {
+        map.addSource('Rank 5', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank5.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 5',
+            'type': 'fill',
+            'source': 'Rank 5',
+            'layout': {},
+            'paint': {
+                'fill-color': '#FFFFBF',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+ map.on('load', () => {
+        map.addSource('Rank 6', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank6.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 6',
+            'type': 'fill',
+            'source': 'Rank 6',
+            'layout': {},
+            'paint': {
+                'fill-color': '#CCEA83',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+ map.on('load', () => {
+        map.addSource('Rank 7', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank7.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 7',
+            'type': 'fill',
+            'source': 'Rank 7',
+            'layout': {},
+            'paint': {
+                'fill-color': '#86CB66',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+ map.on('load', () => {
+        map.addSource('Rank 8', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank8.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 8',
+            'type': 'fill',
+            'source': 'Rank 8',
+            'layout': {},
+            'paint': {
+                'fill-color': '#2DA155',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+ map.on('load', () => {
+        map.addSource('Rank 9', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank9.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 9',
+            'type': 'fill',
+            'source': 'Rank 9',
+            'layout': {},
+			'description': '<p>desc</p>',
+            'paint': {
+                'fill-color': '#006837',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+ 
+         // When a click event occurs on a feature in the states layer,
+        // open a popup at the location of the click, with description
+        // HTML from the click event's properties.
+        map.on('click', 'Rank 9', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(e.description)
+                .addTo(map);
+        });
+
+        // Change the cursor to a pointer when
+        // the mouse is over the states layer.
+        map.on('mouseenter', 'Rank 9', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change the cursor back to a pointer
+        // when it leaves the states layer.
+        map.on('mouseleave', 'Rank 9', () => {
+            map.getCanvas().style.cursor = '';
+        });
+    });
+</script>
+
+</body>
+</html>
