@@ -282,12 +282,6 @@ map.on('load', () => {
         });
 
 // Legend
-const map = L.mapbox
-.map('map')
-.setView([38.8929, -77.0252], 14)
-.addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v12'));
-map.scrollWheelZoom.disable();
- 
 const myLayer = L.mapbox.featureLayer().addTo(map);
 myLayer.setGeoJSON(geojson);
  
