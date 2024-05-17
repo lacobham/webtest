@@ -15,7 +15,7 @@
 </style>
 </head>
 <body>
-<div id='map' style='width: 1000px; height: 800px;'></div>
+<div id='map' style='width: 100%; height: 100%;'></div>
 <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFyYmMiLCJhIjoiY2x3YXhrejYzMGswcTJxcHFwMjZkZmdocCJ9.6HNj3dTSlXvAKuIPoplvrA';
   var map = new mapboxgl.Map({
@@ -219,17 +219,14 @@ map.on('load', () => {
                   });
               });
 map.addLayer({
-                    'id': 'points',
-                    'type': 'symbol',
-                    'source': 'point', // reference the data source
-                    'layout': {
-                        'icon-image': 'cat', // reference the image
-                        'icon-size': 0.25
-                    }
-                });
+            'id': 'places',
+            'type': 'symbol',
+            'source': 'places',
+            'layout': {
+                'icon-image': ['get', 'icon'],
+                'icon-allow-overlap': true
             }
-        );
-    });
+        });
 </script>
 
 </body>
