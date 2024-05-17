@@ -10,6 +10,21 @@ body { margin: 0; padding: 0; }
 </head>
 <body>
 <style>
+  .legend-ctrl {
+  /* 
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  margin-bottom: 30px;
+  */
+  margin-right: 10px;
+  background: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 10px;
+  box-shadow: 0 0 0 2px rgb(0 0 0 / 10%);
+}
 </style>
 </head>
 <body>
@@ -245,6 +260,28 @@ map.on('load', () => {
                 .setHTML('<p>Rank 9!<p>')
                 .addTo(map);
         });
+
+    map.on('load', () => {
+        // Set the default atmosphere style
+        map.setFog({});
+    });
+
+    class LegendControl {
+      onAdd(map) {
+        this._map = map;
+        this._container = document.createElement('div');
+        this._container.className = 'legend-ctrl';
+        this._container.innerHTML = 'Hi!';
+        return this._container;
+      }
+
+      onRemove() {
+        this._container.parentNode.removeChild(this._container);
+        this._map = undefined;
+      }
+    }
+
+    map.addControl(new LegendControl(), 'top-left');
 </script>
 
 </body>
