@@ -311,7 +311,7 @@ map.on('load', () => {
       onAdd(map) {
         this._map = map;
         this._container = document.createElement('div');
-        this._container.idName = 'legend';
+        this._container.className = 'legend';
         return this._container;
       }
       onRemove() {
