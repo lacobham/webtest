@@ -10,7 +10,7 @@ body { margin: 0; padding: 0; }
 </head>
 <body>
 <style>
-.legend {
+#legend {
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -23,14 +23,14 @@ body { margin: 0; padding: 0; }
 	border-radius:5px;
 	box-shadow: 2px 2px 10px #ccc;
 }
-.legend > div {
+#legend > div {
 	display: flex;
 }
-.legend > div > div {
+#legend > div > div {
 	width: 20%;
 	height: 10px;
 }
-.legend > div > div > div {
+#legend > div > div > div {
 	font-size: 12px;
 	margin-top: 10px;
 	color: #333;
@@ -311,7 +311,7 @@ map.on('load', () => {
       onAdd(map) {
         this._map = map;
         this._container = document.createElement('div');
-        this._container.className = 'legend';
+        this._container.idName = 'legend';
         return this._container;
       }
       onRemove() {
