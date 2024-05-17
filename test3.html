@@ -10,14 +10,31 @@ body { margin: 0; padding: 0; }
 </head>
 <body>
 <style>
-  .legend-ctrl {
-  margin-right: 10px;
-  background: white;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin: 10px;
-  box-shadow: 0 0 0 2px rgb(0 0 0 / 10%);
+.legend {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin-right: 10px;
+	margin-bottom: 30px;
+	width: 300px;
+	padding: 5px;
+	background: white;
+	height: 30px;
+	border-radius:5px;
+	box-shadow: 2px 2px 10px #ccc;
 }
+.legend > div {
+	display: flex;
+}
+.legend > div > div {
+	width: 20%;
+	height: 10px;
+}
+.legend > div > div > div {
+	font-size: 12px;
+	margin-top: 10px;
+	color: #333;
+	text-align: center;
 .leg1 {
 	background: #C6E8F9;
 }
@@ -48,7 +65,7 @@ body { margin: 0; padding: 0; }
 			<div class="leg4"><div>4</div></div>
 			<div class="leg5"><div>5</div></div>
 			<div class="leg6"><div>6</div></div>
-      <div class="leg4"><div>7</div></div>
+      			<div class="leg4"><div>7</div></div>
 			<div class="leg5"><div>8</div></div>
 			<div class="leg6"><div>9</div></div>
 		</div>
@@ -294,7 +311,7 @@ map.on('load', () => {
       onAdd(map) {
         this._map = map;
         this._container = document.createElement('div');
-        this._container.className = 'legend-ctrl';
+        this._container.className = 'legend';
         return this._container;
       }
       onRemove() {
