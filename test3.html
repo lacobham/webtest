@@ -18,26 +18,11 @@ body { margin: 0; padding: 0; }
             Helvetica,
             sans-serif;
     }
-#legend {
-  font-family: Arial, sans-serif;
-  background: #fff;
-  padding: 10px;
-  margin: 10px;
-  border: 3px solid #000;
-}
-
-#legend h3 {
-  margin-top: 0;
-}
-
-#legend img {
-  vertical-align: middle;
-}
 </style>
 </head>
 <body>
 <div id='map' style='width: 1000px; height: 1000px;'></div>
-<div id="legend"><h3>Legend</h3></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFyYmMiLCJhIjoiY2x3YXhrejYzMGswcTJxcHFwMjZkZmdocCJ9.6HNj3dTSlXvAKuIPoplvrA';
   var map = new mapboxgl.Map({
@@ -269,21 +254,65 @@ map.on('load', () => {
                 .setHTML('<p>Rank 9!<p>')
                 .addTo(map);
         });
-const iconBase = "https://maps.google.com/mapfiles/kml/shapes/";
-  const icons = {
-    parking: {
-      name: "Parking",
-      icon: iconBase + "parking_lot_maps.png",
-    },
-    library: {
-      name: "Library",
-      icon: iconBase + "library_maps.png",
-    },
-    info: {
-      name: "Info",
-      icon: iconBase + "info-i_maps.png",
-    },
-  };
+
+//Create a canvas element to use with chart.js
+var chartCanvas = document.createElement('canvas');
+chartCanvas.height = 200;
+chartCanvas.width = 200;
+chartCanvas.style.padding = '10px';
+
+//Add the legend control to the map.
+var legend = new atlas.control.LegendControl({
+    title: 'My Legend',
+    legends: [{
+        type: 'html',
+        subtitle: 'Chart.js HTML legend',
+        footer: 'This chart was created by adding a Canvas element to the legend and using <a href="https://www.chartjs.org/" target="_blank">Chart.js</a> to create a chart on the canvas.',
+        html: chartCanvas
+    }]
+});
+
+//Add the legend to the map.
+map.controls.add(legend, {
+    position: 'bottom-left'
+});
+
+//Chart.js requires the canvas to be added to the page DOM before drawing a chart. Thus, run chart.js code after Legend control/canvas has been added to the map.
+var myChart = new Chart(chartCanvas.getContext('2d'), {
+    type: 'radar',
+    data: {
+        labels: [
+            'Eating',
+            'Drinking',
+            'Sleeping',
+            'Designing',
+            'Coding',
+            'Cycling',
+            'Running'
+        ],
+        datasets: [{
+            label: 'My First Dataset',
+            data: [65, 59, 90, 81, 56, 55, 40],
+            fill: true,
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgb(255, 99, 132)',
+            pointBackgroundColor: 'rgb(255, 99, 132)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(255, 99, 132)'
+        }, {
+            label: 'My Second Dataset',
+            data: [28, 48, 40, 19, 96, 27, 100],
+            fill: true,
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgb(54, 162, 235)',
+            pointBackgroundColor: 'rgb(54, 162, 235)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(54, 162, 235)'
+        }]
+    }
+});
 </script>
 
 </body>
