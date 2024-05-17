@@ -75,6 +75,24 @@ map.addLayer({
     }
 });
 });
+
+function addAdditionalSourceAndLayer() {
+      map.addSource('Catchment', {
+          type: 'geojson',
+          data: 'polygon.geojson'
+      });
+      map.addLayer({
+          id: 'Catchment',
+          type: 'fill',
+          source: 'Catchment',
+          paint: {
+            'fill-color': 'transparent', 
+            'fill-outline-color': '#c4a836',
+          },
+          layout: {
+              'visibility': 'visible'
+          }
+      });
 </script>
 
 </script>
