@@ -10,7 +10,7 @@ body { margin: 0; padding: 0; }
 </head>
 <body>
 <style>
-    .p {
+    .popup {
         max-width: 400px;
         font:
             12px/20px 'Helvetica Neue',
@@ -23,6 +23,12 @@ body { margin: 0; padding: 0; }
 <body>
 <div id='map' style='width: 1000px; height: 1000px;'></div>
 <script>
+// Built with examples & help from:
+// https://docs.mapbox.com/mapbox-gl-js/example/popup/
+// https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
+// https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
+// https://www.mapbox.com/install/javascript
+
   mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFyYmMiLCJhIjoiY2x3YXhrejYzMGswcTJxcHFwMjZkZmdocCJ9.6HNj3dTSlXvAKuIPoplvrA';
   var map = new mapboxgl.Map({
     container: 'map',
@@ -30,6 +36,8 @@ body { margin: 0; padding: 0; }
         center: [-78.6977778, 44.3746760], // starting position
         zoom: 9, // starting zoom
   });
+  
+// Rank 1
  map.on('load', () => {
         map.addSource('Rank 1', {
             type: 'geojson',
@@ -48,7 +56,15 @@ body { margin: 0; padding: 0; }
             }
         });
  });
+        // Open's popup on each ranking layer with HTML description
+        map.on('click', 'Rank 1', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 1!<p>')
+                .addTo(map);
+        });
 
+// Rank 2
  map.on('load', () => {
         map.addSource('Rank 2', {
             type: 'geojson',
@@ -66,8 +82,14 @@ body { margin: 0; padding: 0; }
                 'fill-opacity': 0.5
             }
         });
- });
+        map.on('click', 'Rank 2', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 2!<p>')
+                .addTo(map);
+        });
 
+// Rank 3
  map.on('load', () => {
         map.addSource('Rank 3', {
             type: 'geojson',
@@ -86,7 +108,14 @@ body { margin: 0; padding: 0; }
             }
         });
  });
+        map.on('click', 'Rank 3', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 3!<p>')
+                .addTo(map);
+        });
 
+// Rank 4
  map.on('load', () => {
         map.addSource('Rank 4', {
             type: 'geojson',
@@ -105,7 +134,14 @@ body { margin: 0; padding: 0; }
             }
         });
  });
+        map.on('click', 'Rank 4', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 4!<p>')
+                .addTo(map);
+        });
 
+// Rank 5
 map.on('load', () => {
         map.addSource('Rank 5', {
             type: 'geojson',
@@ -124,7 +160,14 @@ map.on('load', () => {
             }
         });
  });
+        map.on('click', 'Rank 5', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 5!<p>')
+                .addTo(map);
+        });
 
+// Rank 6
  map.on('load', () => {
         map.addSource('Rank 6', {
             type: 'geojson',
@@ -143,7 +186,14 @@ map.on('load', () => {
             }
         });
  });
+        map.on('click', 'Rank 6', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 6!<p>')
+                .addTo(map);
+        });
 
+// Rank 7
  map.on('load', () => {
         map.addSource('Rank 7', {
             type: 'geojson',
@@ -162,7 +212,14 @@ map.on('load', () => {
             }
         });
  });
+        map.on('click', 'Rank 7', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 7!<p>')
+                .addTo(map);
+        });
 
+// Rank 8
  map.on('load', () => {
         map.addSource('Rank 8', {
             type: 'geojson',
@@ -181,7 +238,14 @@ map.on('load', () => {
             }
         });
  });
+        map.on('click', 'Rank 8', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 8!<p>')
+                .addTo(map);
+        });
 
+// Rank 9
  map.on('load', () => {
         map.addSource('Rank 9', {
             type: 'geojson',
@@ -200,11 +264,6 @@ map.on('load', () => {
             }
         });
  });
- 
-         // When a click event occurs on a feature in the states layer,
-        // open a popup at the location of the click, with description
-        // HTML from the click event's properties.
-    //Rank 9
         map.on('click', 'Rank 9', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
@@ -212,177 +271,6 @@ map.on('load', () => {
                 .addTo(map);
         });
 
-        // Change the cursor to a pointer when
-        // the mouse is over the states layer.
-        map.on('mouseenter', 'Rank 9', () => {
-            map.getCanvas().style.cursor = 'pointer';
-        });
-
-        // Change the cursor back to a pointer
-        // when it leaves the states layer.
-        map.on('mouseleave', 'Rank 9', () => {
-            map.getCanvas().style.cursor = '';
-        });
-
-    // Rank 8
-        map.on('click', 'Rank 8', (e) => {
-            new mapboxgl.Popup()
-                .setLngLat(e.lngLat)
-                .setHTML('<p>Rank 8!<p>')
-                .addTo(map);
-        });
-
-        // Change the cursor to a pointer when
-        // the mouse is over the states layer.
-        map.on('mouseenter', 'Rank 8', () => {
-            map.getCanvas().style.cursor = 'pointer';
-        });
-
-        // Change the cursor back to a pointer
-        // when it leaves the states layer.
-        map.on('mouseleave', 'Rank 8', () => {
-            map.getCanvas().style.cursor = '';
-        });
-
-    // Rank 7 
-        map.on('click', 'Rank 7', (e) => {
-            new mapboxgl.Popup()
-                .setLngLat(e.lngLat)
-                .setHTML('<p>Rank 7!<p>')
-                .addTo(map);
-        });
-
-        // Change the cursor to a pointer when
-        // the mouse is over the states layer.
-        map.on('mouseenter', 'Rank 7', () => {
-            map.getCanvas().style.cursor = 'pointer';
-        });
-
-        // Change the cursor back to a pointer
-        // when it leaves the states layer.
-        map.on('mouseleave', 'Rank 7', () => {
-            map.getCanvas().style.cursor = '';
-        });
-
-    // Rank 6
-        map.on('click', 'Rank 6', (e) => {
-            new mapboxgl.Popup()
-                .setLngLat(e.lngLat)
-                .setHTML('<p>Rank 6!<p>')
-                .addTo(map);
-        });
-
-        // Change the cursor to a pointer when
-        // the mouse is over the states layer.
-        map.on('mouseenter', 'Rank 6', () => {
-            map.getCanvas().style.cursor = 'pointer';
-        });
-
-        // Change the cursor back to a pointer
-        // when it leaves the states layer.
-        map.on('mouseleave', 'Rank 6', () => {
-            map.getCanvas().style.cursor = '';
-        });
-
-    // Rank 5
-        map.on('click', 'Rank 5', (e) => {
-            new mapboxgl.Popup()
-                .setLngLat(e.lngLat)
-                .setHTML('<p>Rank 5!<p>')
-                .addTo(map);
-        });
-
-        // Change the cursor to a pointer when
-        // the mouse is over the states layer.
-        map.on('mouseenter', 'Rank 5', () => {
-            map.getCanvas().style.cursor = 'pointer';
-        });
-
-        // Change the cursor back to a pointer
-        // when it leaves the states layer.
-        map.on('mouseleave', 'Rank 5', () => {
-            map.getCanvas().style.cursor = '';
-        });
-
-    // Rank 4
-        map.on('click', 'Rank 4', (e) => {
-            new mapboxgl.Popup()
-                .setLngLat(e.lngLat)
-                .setHTML('<p>Rank 4!<p>')
-                .addTo(map);
-        });
-
-        // Change the cursor to a pointer when
-        // the mouse is over the states layer.
-        map.on('mouseenter', 'Rank 4', () => {
-            map.getCanvas().style.cursor = 'pointer';
-        });
-
-        // Change the cursor back to a pointer
-        // when it leaves the states layer.
-        map.on('mouseleave', 'Rank 4', () => {
-            map.getCanvas().style.cursor = '';
-        });
-
-    // Rank 3
-        map.on('click', 'Rank 3', (e) => {
-            new mapboxgl.Popup()
-                .setLngLat(e.lngLat)
-                .setHTML('<p>Rank 3!<p>')
-                .addTo(map);
-        });
-
-        // Change the cursor to a pointer when
-        // the mouse is over the states layer.
-        map.on('mouseenter', 'Rank 3', () => {
-            map.getCanvas().style.cursor = 'pointer';
-        });
-
-        // Change the cursor back to a pointer
-        // when it leaves the states layer.
-        map.on('mouseleave', 'Rank 3', () => {
-            map.getCanvas().style.cursor = '';
-        });
-
-    // Rank 2
-        map.on('click', 'Rank 2', (e) => {
-            new mapboxgl.Popup()
-                .setLngLat(e.lngLat)
-                .setHTML('<p>Rank 2!<p>')
-                .addTo(map);
-        });
-
-        // Change the cursor to a pointer when
-        // the mouse is over the states layer.
-        map.on('mouseenter', 'Rank 2', () => {
-            map.getCanvas().style.cursor = 'pointer';
-        });
-
-        // Change the cursor back to a pointer
-        // when it leaves the states layer.
-        map.on('mouseleave', 'Rank 2', () => {
-            map.getCanvas().style.cursor = '';
-        });
-
-    // Rank 1
-        map.on('click', 'Rank 1', (e) => {
-            new mapboxgl.Popup()
-                .setLngLat(e.lngLat)
-                .setHTML('<p>Rank 1!<p>')
-                .addTo(map);
-        });
-
-        // Change the cursor to a pointer when
-        // the mouse is over the states layer.
-        map.on('mouseenter', 'Rank 1', () => {
-            map.getCanvas().style.cursor = 'pointer';
-        });
-
-        // Change the cursor back to a pointer
-        // when it leaves the states layer.
-        map.on('mouseleave', 'Rank 1', () => {
-            map.getCanvas().style.cursor = '';
-        });
 </script>
 
 </body>
