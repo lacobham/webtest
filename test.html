@@ -197,16 +197,16 @@
 
       map.on('load', () => {
         // Add a source for the state polygons.
-        map.addSource('Rank 1', {
+        map.addSource('Ranking', {
             'type': 'geojson',
             'data': 'data/Rank1.geojson'
         });
 
         // Add a layer showing the state polygons.
         map.addLayer({
-            'id': 'Rank 1',
+            'id': 'Ranking',
             'type': 'fill',
-            'source': 'Rank 1',
+            'source': 'Ranking,
             'paint': {
                 'fill-color': 'rgba(200, 100, 240, 0.4)',
                 'fill-outline-color': 'rgba(200, 100, 240, 1)'
@@ -216,7 +216,7 @@
         // When a click event occurs on a feature in the states layer,
         // open a popup at the location of the click, with description
         // HTML from the click event's properties.
-        map.on('click', 'Rank 1', (e) => {
+        map.on('click', 'Ranking', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
                 .addTo(map);
@@ -224,13 +224,13 @@
 
         // Change the cursor to a pointer when
         // the mouse is over the states layer.
-        map.on('mouseenter', 'Rank 1', () => {
+        map.on('mouseenter', 'Ranking', () => {
             map.getCanvas().style.cursor = 'pointer';
         });
 
         // Change the cursor back to a pointer
         // when it leaves the states layer.
-        map.on('mouseleave', 'Rank 1', () => {
+        map.on('mouseleave', 'Ranking', () => {
             map.getCanvas().style.cursor = '';
         });
     });
