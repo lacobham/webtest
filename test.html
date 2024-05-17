@@ -15,19 +15,171 @@
         zoom: 5 // starting zoom
   });
  map.on('load', () => {
-        map.addSource('Polygon', {
+        map.addSource('Rank 1', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
             data: 'data/polygon.geojson'
         });
 
         map.addLayer({
-            'id': 'Polygon',
+            'id': 'Rank 1',
             'type': 'fill',
             'source': 'Polygon',
             'layout': {},
             'paint': {
-                'fill-color': 'A50026', // red
+                'fill-color': '#A50026',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+ map.on('load', () => {
+        map.addSource('Rank 2', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank2.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 2',
+            'type': 'fill',
+            'source': 'Polygon',
+            'layout': {},
+            'paint': {
+                'fill-color': '#DE3F2E',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+ map.on('load', () => {
+        map.addSource('Rank 3', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank3.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 3',
+            'type': 'fill',
+            'source': 'Polygon',
+            'layout': {},
+            'paint': {
+                'fill-color': '#F88E52',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+ map.on('load', () => {
+        map.addSource('Rank 4', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank4.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 4',
+            'type': 'fill',
+            'source': 'Polygon',
+            'layout': {},
+            'paint': {
+                'fill-color': '#FED480',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+ map.on('load', () => {
+        map.addSource('Rank 5', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank5.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 5',
+            'type': 'fill',
+            'source': 'Polygon',
+            'layout': {},
+            'paint': {
+                'fill-color': '#FFFFBF',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+ map.on('load', () => {
+        map.addSource('Rank 6', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank6.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 6',
+            'type': 'fill',
+            'source': 'Polygon',
+            'layout': {},
+            'paint': {
+                'fill-color': '#CCEA83',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+ map.on('load', () => {
+        map.addSource('Rank 7', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank7.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 7',
+            'type': 'fill',
+            'source': 'Polygon',
+            'layout': {},
+            'paint': {
+                'fill-color': '#86CB66',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+ map.on('load', () => {
+        map.addSource('Rank 8', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank8.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 8',
+            'type': 'fill',
+            'source': 'Polygon',
+            'layout': {},
+            'paint': {
+                'fill-color': '#2DA155',
+                'fill-opacity': 0.5
+            }
+        });
+ });
+
+ map.on('load', () => {
+        map.addSource('Rank 9', {
+            type: 'geojson',
+            // Use a URL for the value for the `data` property.
+            data: 'data/Rank9.geojson'
+        });
+
+        map.addLayer({
+            'id': 'Rank 9',
+            'type': 'fill',
+            'source': 'Polygon',
+            'layout': {},
+            'paint': {
+                'fill-color': '#006837',
                 'fill-opacity': 0.5
             }
         });
