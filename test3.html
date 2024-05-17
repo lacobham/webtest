@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <head>
 <!--Mapbox-->
+<!--Resources Used:
+	https://www.mapbox.com/install/javascript
+	https://docs.mapbox.com/mapbox-gl-js/example/popup/
+	https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
+	https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
+	https://www.youtube.com/watch?v=Fz5SywxI06M&t=585s
+	https://dwellsy.com/rentmaps -->
+<!-- https://www.mapbox.com/install/javascript -->
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
 <style>
@@ -10,6 +18,9 @@ body { margin: 0; padding: 0; }
 </head>
 <body>
 <style>
+/* Legend CSS guided by:
+https://www.youtube.com/watch?v=Fz5SywxI06M&t=585s
+https://dwellsy.com/rentmaps */
 #legend {
 	position: absolute;
 	bottom: 0;
@@ -49,17 +60,17 @@ body { margin: 0; padding: 0; }
 <body>
 <div id='map'></div>
   <div id="legend">
-		<div>
-			<div class="leg1"><div>1</div></div>
-			<div class="leg2"><div>2</div></div>
-			<div class="leg3"><div>3</div></div>
-			<div class="leg4"><div>4</div></div>
-			<div class="leg5"><div>5</div></div>
-			<div class="leg6"><div>6</div></div>
-      			<div class="leg7"><div>7</div></div>
-			<div class="leg8"><div>8</div></div>
-			<div class="leg9"><div>9</div></div>
-		</div>
+	<div>
+		<div class="leg1"><div>1</div></div>
+		<div class="leg2"><div>2</div></div>
+		<div class="leg3"><div>3</div></div>
+		<div class="leg4"><div>4</div></div>
+		<div class="leg5"><div>5</div></div>
+		<div class="leg6"><div>6</div></div>
+		<div class="leg7"><div>7</div></div>
+		<div class="leg8"><div>8</div></div>
+		<div class="leg9"><div>9</div></div>
+	</div>
 	</div>
 <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFyYmMiLCJhIjoiY2x3YXhrejYzMGswcTJxcHFwMjZkZmdocCJ9.6HNj3dTSlXvAKuIPoplvrA';
@@ -70,6 +81,7 @@ body { margin: 0; padding: 0; }
         zoom: 8, // starting zoom
   });
 // Rank 1
+// Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
     map.on('load', () => {
         map.addSource('Rank 1', {
             type: 'geojson',
@@ -87,6 +99,9 @@ body { margin: 0; padding: 0; }
             }
         });
  });
+// Popup code learned with:
+// https://docs.mapbox.com/mapbox-gl-js/example/popup/
+// https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
         map.on('click', 'Rank 1', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
@@ -94,6 +109,7 @@ body { margin: 0; padding: 0; }
                 .addTo(map);
         });
 // Rank 2
+// Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
  map.on('load', () => {
         map.addSource('Rank 2', {
             type: 'geojson',
@@ -111,6 +127,9 @@ body { margin: 0; padding: 0; }
             }
         });
  });
+// Popup code learned with:
+// https://docs.mapbox.com/mapbox-gl-js/example/popup/
+// https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
         map.on('click', 'Rank 2', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
@@ -119,6 +138,7 @@ body { margin: 0; padding: 0; }
         });
     
 // Rank 3
+// Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
  map.on('load', () => {
         map.addSource('Rank 3', {
             type: 'geojson',
@@ -136,6 +156,9 @@ body { margin: 0; padding: 0; }
             }
         });
  });
+// Popup code learned with:
+// https://docs.mapbox.com/mapbox-gl-js/example/popup/
+// https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
         map.on('click', 'Rank 3', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
@@ -144,6 +167,7 @@ body { margin: 0; padding: 0; }
         });
     
 // Rank 4
+// Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
  map.on('load', () => {
         map.addSource('Rank 4', {
             type: 'geojson',
@@ -161,6 +185,9 @@ body { margin: 0; padding: 0; }
             }
         });
  });
+// Popup code learned with:
+// https://docs.mapbox.com/mapbox-gl-js/example/popup/
+// https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
     map.on('click', 'Rank 4', (e) => {
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
@@ -169,6 +196,7 @@ body { margin: 0; padding: 0; }
     });
     
 // Rank 5
+// Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
 map.on('load', () => {
         map.addSource('Rank 5', {
             type: 'geojson',
@@ -186,6 +214,9 @@ map.on('load', () => {
             }
         });
  });
+// Popup code learned with:
+// https://docs.mapbox.com/mapbox-gl-js/example/popup/
+// https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
         map.on('click', 'Rank 5', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
@@ -194,6 +225,7 @@ map.on('load', () => {
         });
     
 // Rank 6
+// Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
  map.on('load', () => {
         map.addSource('Rank 6', {
             type: 'geojson',
@@ -211,6 +243,9 @@ map.on('load', () => {
             }
         });
  });
+// Popup code learned with:
+// https://docs.mapbox.com/mapbox-gl-js/example/popup/
+// https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
         map.on('click', 'Rank 6', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
@@ -219,6 +254,7 @@ map.on('load', () => {
         });
     
 // Rank 7
+// Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
  map.on('load', () => {
         map.addSource('Rank 7', {
             type: 'geojson',
@@ -236,6 +272,9 @@ map.on('load', () => {
             }
         });
  });
+// Popup code learned with:
+// https://docs.mapbox.com/mapbox-gl-js/example/popup/
+// https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
         map.on('click', 'Rank 7', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
@@ -244,6 +283,7 @@ map.on('load', () => {
         });
 
 // Rank 8
+// Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
  map.on('load', () => {
         map.addSource('Rank 8', {
             type: 'geojson',
@@ -261,6 +301,9 @@ map.on('load', () => {
             }
         });
  });
+// Popup code learned with:
+// https://docs.mapbox.com/mapbox-gl-js/example/popup/
+// https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
         map.on('click', 'Rank 8', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
@@ -269,10 +312,10 @@ map.on('load', () => {
         });
     
 // Rank 9
+// Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
  map.on('load', () => {
         map.addSource('Rank 9', {
             type: 'geojson',
-            // Use a URL for the value for the `data` property.
             data: 'data/Rank9.geojson'
         });
         map.addLayer({
@@ -286,18 +329,19 @@ map.on('load', () => {
             }
         });
  });
+// Popup code learned with:
+// https://docs.mapbox.com/mapbox-gl-js/example/popup/
+// https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
         map.on('click', 'Rank 9', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
                 .setHTML('<p>Rank 9!<p>')
                 .addTo(map);
         });
-
-    map.on('load', () => {
-        // Set the default atmosphere style
-        map.setFog({});
-    });
-
+	
+// Legend code learned with:
+// https://www.youtube.com/watch?v=Fz5SywxI06M&t=585s
+// https://dwellsy.com/rentmaps
     class LegendControl {
       onAdd(map) {
         this._map = map;
@@ -312,6 +356,5 @@ map.on('load', () => {
     }
     map.addControl(new LegendControl(), 'bottom-right');
 </script>
-
 </body>
 </html>
