@@ -18,10 +18,41 @@ body { margin: 0; padding: 0; }
   margin: 10px;
   box-shadow: 0 0 0 2px rgb(0 0 0 / 10%);
 }
+.leg1 {
+	background: #C6E8F9;
+}
+.leg2 {
+	background: #ABDFF5;
+}
+.leg3 {
+	background: #C6C5E3;
+}
+.leg4 {
+	background: #8E89C1;
+}
+.leg5 {
+	background: #5658A5;
+}
+.leg6 {
+	background: #000000;
+}
 </style>
 </head>
 <body>
 <div id='map'></div>
+  <div id="legend">
+		<div>
+			<div class="leg1"><div>1</div></div>
+			<div class="leg2"><div>2</div></div>
+			<div class="leg3"><div>3/div></div>
+			<div class="leg4"><div>4</div></div>
+			<div class="leg5"><div>5</div></div>
+			<div class="leg6"><div>6</div></div>
+      <div class="leg4"><div>7</div></div>
+			<div class="leg5"><div>8</div></div>
+			<div class="leg6"><div>9</div></div>
+		</div>
+	</div>
 <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFyYmMiLCJhIjoiY2x3YXhrejYzMGswcTJxcHFwMjZkZmdocCJ9.6HNj3dTSlXvAKuIPoplvrA';
   var map = new mapboxgl.Map({
@@ -264,7 +295,6 @@ map.on('load', () => {
         this._map = map;
         this._container = document.createElement('div');
         this._container.className = 'legend-ctrl';
-        this._container.innerHTML = '1 2 3 4 5 6 7 8 9';
         return this._container;
       }
       onRemove() {
