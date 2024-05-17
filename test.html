@@ -3,6 +3,16 @@
 <!--Mapbox-->
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+<style>
+  .mapboxgl-popup {
+      max-width: 400px;
+      font:
+          12px/20px 'Helvetica Neue',
+          Arial,
+          Helvetica,
+          sans-serif;
+  }
+</style>
 </head>
 <body>
 <div id='map' style='width: 1000px; height: 800px;'></div>
@@ -204,9 +214,22 @@ map.on('load', () => {
                         'geometry': {
                             'type': 'Point',
                             'coordinates': [-78.4945367, 44.0892972]
+                            'icon-size': 0.25
                         }}]}
                   });
               });
+map.addLayer({
+                    'id': 'points',
+                    'type': 'symbol',
+                    'source': 'point', // reference the data source
+                    'layout': {
+                        'icon-image': 'cat', // reference the image
+                        'icon-size': 0.25
+                    }
+                });
+            }
+        );
+    });
 </script>
 
 </body>
