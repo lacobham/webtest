@@ -10,7 +10,7 @@ body { margin: 0; padding: 0; }
 </head>
 <body>
 <style>
-    .mapboxgl-popup {
+    .p {
         max-width: 400px;
         font:
             12px/20px 'Helvetica Neue',
@@ -194,7 +194,6 @@ map.on('load', () => {
             'type': 'fill',
             'source': 'Rank 9',
             'layout': {},
-			'description': '<p>desc</p>',
             'paint': {
                 'fill-color': '#006837',
                 'fill-opacity': 0.5
@@ -208,7 +207,7 @@ map.on('load', () => {
         map.on('click', 'Rank 9', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
-                .setHTML(e.description)
+                .setHTML('<p>Rank 9!<p>')
                 .addTo(map);
         });
 
