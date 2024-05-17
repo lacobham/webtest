@@ -23,13 +23,13 @@
 
         map.addLayer({
             'id': 'earthquakes-layer',
-            'type': 'Feature',
+            'type': 'fill',
             'source': 'earthquakes',
             'paint': {
-                'Feature-radius': 4,
-                'Feature-stroke-width': 2,
-                'Feature-color': 'red',
-                'Feature-stroke-color': 'white'
+                'fill-radius': 4,
+                'fill-stroke-width': 2,
+                'fill-color': 'red',
+                'fill-stroke-color': 'white'
             }
         });
     });
