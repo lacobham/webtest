@@ -22,17 +22,15 @@
         });
 
         map.addLayer({
-            'id': 'earthquakes-layer',
+            'id': 'earthquakes',
             'type': 'fill',
-            'source': 'earthquakes',
+            'source': 'polygon.geojson', // reference the data source
+            'layout': {},
             'paint': {
-                'fill-radius': 4,
-                'fill-stroke-width': 2,
-                'fill-color': 'red',
-                'fill-stroke-color': 'white'
+                'fill-color': '#0080ff', // blue color fill
+                'fill-opacity': 0.5
             }
         });
-    });
 
 </script>
 
