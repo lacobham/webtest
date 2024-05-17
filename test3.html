@@ -22,7 +22,6 @@ body { margin: 0; padding: 0; }
 </head>
 <body>
 <div id='map' style='width: 1000px; height: 1000px;'></div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFyYmMiLCJhIjoiY2x3YXhrejYzMGswcTJxcHFwMjZkZmdocCJ9.6HNj3dTSlXvAKuIPoplvrA';
   var map = new mapboxgl.Map({
@@ -271,7 +270,7 @@ var legend = new atlas.control.LegendControl({
         html: chartCanvas
     }]
 });
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 //Add the legend to the map.
 map.controls.add(legend, {
     position: 'bottom-left'
