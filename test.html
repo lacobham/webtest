@@ -91,24 +91,6 @@
  });
 
  map.on('load', () => {
-        map.addSource('Rank 5', {
-            type: 'geojson',
-            // Use a URL for the value for the `data` property.
-            data: 'data/Rank5.geojson'
-        });
- });
-        map.addLayer({
-            'id': 'Rank 5',
-            'type': 'fill',
-            'source': 'Rank 5',
-            'layout': {},
-            'paint': {
-                'fill-color': '#FFFFBF',
-                'fill-opacity': 0.5
-            }
- });
-
- map.on('load', () => {
         map.addSource('Rank 6', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
