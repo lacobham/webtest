@@ -194,8 +194,7 @@
             }
         });
  });
-  
-map.on('load', () => {
+map.on('style.load', function() {
         map.addSource('places', {
             // This GeoJSON contains features that include an "icon"
             // property. The value of the "icon" property corresponds
