@@ -106,18 +106,17 @@
             // Use a URL for the value for the `data` property.
             data: 'data/Rank5.geojson'
         });
-
+ });
         map.addLayer({
             'id': 'Rank 5',
             'type': 'fill',
             'source': 'Rank 5',
             'layout': {},
+            'description': 'Rank5',
             'paint': {
                 'fill-color': '#FFFFBF',
                 'fill-opacity': 0.5
             }
-            'description': 'Rank5',
-        });
  });
 
  map.on('load', () => {
