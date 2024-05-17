@@ -18,37 +18,26 @@ body { margin: 0; padding: 0; }
             Helvetica,
             sans-serif;
     }
-.map-overlay {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: #fff;
-    margin-right: 20px;
-    font-family: Arial, sans-serif;
-    overflow: auto;
-    border-radius: 3px;
-}
 #legend {
+  font-family: Arial, sans-serif;
+  background: #fff;
   padding: 10px;
-  box-shadow: 0 1px 2px rgba(0 0 0 0.1);
-  line-height: 18px;
-  height: 150px;
-  margin-bottom: 40px;
-  width: 100px;
+  margin: 10px;
+  border: 3px solid #000;
 }
 
-.legend-key {
-  display: inline-block;
-  border-radius: 20%;
-  width: 10px;
-  height: 10px;
-  margin-right: 5px;
+#legend h3 {
+  margin-top: 0;
+}
+
+#legend img {
+  vertical-align: middle;
 }
 </style>
 </head>
 <body>
 <div id='map' style='width: 1000px; height: 1000px;'></div>
-<div class="map-overlay" id="legend"></div>
+<div id="legend"><h3>Legend</h3></div>
 <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFyYmMiLCJhIjoiY2x3YXhrejYzMGswcTJxcHFwMjZkZmdocCJ9.6HNj3dTSlXvAKuIPoplvrA';
   var map = new mapboxgl.Map({
@@ -280,15 +269,21 @@ map.on('load', () => {
                 .setHTML('<p>Rank 9!<p>')
                 .addTo(map);
         });
-
-// Legend
-const myLayer = L.mapbox.featureLayer().addTo(map);
-myLayer.setGeoJSON(geojson);
- 
-L.mapbox
-.legendControl({ position: 'topright' })
-.addLegend(`<strong>My walk from the White House to the hill!</strong>`)
-.addTo(map);
+const iconBase = "https://maps.google.com/mapfiles/kml/shapes/";
+  const icons = {
+    parking: {
+      name: "Parking",
+      icon: iconBase + "parking_lot_maps.png",
+    },
+    library: {
+      name: "Library",
+      icon: iconBase + "library_maps.png",
+    },
+    info: {
+      name: "Info",
+      icon: iconBase + "info-i_maps.png",
+    },
+  };
 </script>
 
 </body>
