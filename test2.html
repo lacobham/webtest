@@ -204,6 +204,7 @@ map.on('load', () => {
          // When a click event occurs on a feature in the states layer,
         // open a popup at the location of the click, with description
         // HTML from the click event's properties.
+    //Rank 9
         map.on('click', 'Rank 9', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
@@ -220,6 +221,166 @@ map.on('load', () => {
         // Change the cursor back to a pointer
         // when it leaves the states layer.
         map.on('mouseleave', 'Rank 9', () => {
+            map.getCanvas().style.cursor = '';
+        });
+
+    // Rank 8
+        map.on('click', 'Rank 8', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 8!<p>')
+                .addTo(map);
+        });
+
+        // Change the cursor to a pointer when
+        // the mouse is over the states layer.
+        map.on('mouseenter', 'Rank 8', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change the cursor back to a pointer
+        // when it leaves the states layer.
+        map.on('mouseleave', 'Rank 8', () => {
+            map.getCanvas().style.cursor = '';
+        });
+
+    // Rank 7 
+        map.on('click', 'Rank 7', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 7!<p>')
+                .addTo(map);
+        });
+
+        // Change the cursor to a pointer when
+        // the mouse is over the states layer.
+        map.on('mouseenter', 'Rank 7', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change the cursor back to a pointer
+        // when it leaves the states layer.
+        map.on('mouseleave', 'Rank 7', () => {
+            map.getCanvas().style.cursor = '';
+        });
+
+    // Rank 6
+        map.on('click', 'Rank 6', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 6!<p>')
+                .addTo(map);
+        });
+
+        // Change the cursor to a pointer when
+        // the mouse is over the states layer.
+        map.on('mouseenter', 'Rank 6', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change the cursor back to a pointer
+        // when it leaves the states layer.
+        map.on('mouseleave', 'Rank 6', () => {
+            map.getCanvas().style.cursor = '';
+        });
+
+    // Rank 5
+        map.on('click', 'Rank 5', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 5!<p>')
+                .addTo(map);
+        });
+
+        // Change the cursor to a pointer when
+        // the mouse is over the states layer.
+        map.on('mouseenter', 'Rank 5', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change the cursor back to a pointer
+        // when it leaves the states layer.
+        map.on('mouseleave', 'Rank 5', () => {
+            map.getCanvas().style.cursor = '';
+        });
+
+    // Rank 4
+        map.on('click', 'Rank 4', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 4!<p>')
+                .addTo(map);
+        });
+
+        // Change the cursor to a pointer when
+        // the mouse is over the states layer.
+        map.on('mouseenter', 'Rank 4', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change the cursor back to a pointer
+        // when it leaves the states layer.
+        map.on('mouseleave', 'Rank 4', () => {
+            map.getCanvas().style.cursor = '';
+        });
+
+    // Rank 3
+        map.on('click', 'Rank 3', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 3!<p>')
+                .addTo(map);
+        });
+
+        // Change the cursor to a pointer when
+        // the mouse is over the states layer.
+        map.on('mouseenter', 'Rank 3', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change the cursor back to a pointer
+        // when it leaves the states layer.
+        map.on('mouseleave', 'Rank 3', () => {
+            map.getCanvas().style.cursor = '';
+        });
+
+    // Rank 2
+        map.on('click', 'Rank 2', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 2!<p>')
+                .addTo(map);
+        });
+
+        // Change the cursor to a pointer when
+        // the mouse is over the states layer.
+        map.on('mouseenter', 'Rank 2', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change the cursor back to a pointer
+        // when it leaves the states layer.
+        map.on('mouseleave', 'Rank 2', () => {
+            map.getCanvas().style.cursor = '';
+        });
+
+    // Rank 1
+        map.on('click', 'Rank 1', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 1!<p>')
+                .addTo(map);
+        });
+
+        // Change the cursor to a pointer when
+        // the mouse is over the states layer.
+        map.on('mouseenter', 'Rank 1', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change the cursor back to a pointer
+        // when it leaves the states layer.
+        map.on('mouseleave', 'Rank 1', () => {
             map.getCanvas().style.cursor = '';
         });
 </script>
