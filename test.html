@@ -112,7 +112,6 @@
             'type': 'fill',
             'source': 'Rank 5',
             'layout': {},
-            'description': 'Rank5',
             'paint': {
                 'fill-color': '#FFFFBF',
                 'fill-opacity': 0.5
@@ -194,47 +193,6 @@
             }
         });
  });
-
-      map.on('load', () => {
-        // Add a source for the state polygons.
-        map.addSource('Ranking', {
-            'type': 'geojson',
-            'data': 'data/Rank5.geojson'
-        });
-
-        // Add a layer showing the state polygons.
-        map.addLayer({
-            'id': 'Ranking',
-            'type': 'fill',
-            'source': 'Ranking',
-            'paint': {
-                'fill-color': 'rgba(200, 100, 240, 0.4)',
-                'fill-outline-color': 'rgba(200, 100, 240, 1)'
-            }
-        });
-
-        // When a click event occurs on a feature in the states layer,
-        // open a popup at the location of the click, with description
-        // HTML from the click event's properties.
-        map.on('click', 'Ranking', (e) => {
-            new mapboxgl.Popup()
-                .setLngLat(e.lngLat)
-                .setHTML(description)
-                .addTo(map);
-        });
-
-        // Change the cursor to a pointer when
-        // the mouse is over the states layer.
-        map.on('mouseenter', 'Ranking', () => {
-            map.getCanvas().style.cursor = 'pointer';
-        });
-
-        // Change the cursor back to a pointer
-        // when it leaves the states layer.
-        map.on('mouseleave', 'Ranking', () => {
-            map.getCanvas().style.cursor = '';
-        });
-    });
 </script>
 
 </body>
