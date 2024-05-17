@@ -184,6 +184,28 @@
             }
         });
  });
+
+map.on('load', () => {
+        map.addSource('places', {
+            // This GeoJSON contains features that include an "icon"
+            // property. The value of the "icon" property corresponds
+            // to an image in the Mapbox Streets style's sprite.
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': [
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Rank 9</strong><p>This area is Rank 9, meaning it is the most suitable of all lands in the study area for Kirtland's Warbler</p>',
+                            'icon': 'bird'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-78.4945367,44.0892972°N ]
+                        }
+                    }
 </script>
 
 </body>
