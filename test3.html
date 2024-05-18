@@ -28,6 +28,9 @@ body { margin: 0; padding: 0; }
 /* Legend CSS guided by:
 https://www.youtube.com/watch?v=Fz5SywxI06M&t=585s
 https://dwellsy.com/rentmaps */
+.mapboxgl-popup-content {
+	padding: 0px;
+}
 #legend {
 	position: absolute;
 	bottom: 0;
@@ -64,10 +67,16 @@ https://dwellsy.com/rentmaps */
 .leg8 { background-color: #2DA155; }
 .leg9 { background-color: #006837; }
 
-h1 {
+#legendheader {
     font-size: 15px;
     margin: 0;
 }
+#Rank1 {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 15px;
+}
+	
 </style>
 </head>
 <body>
@@ -82,7 +91,7 @@ h1 {
 	
 <div id='map'></div>
   <div id="legend">
-	<div><h1>Habitat Suitability (1 = Least Suitable, 9 = Most Suitable)</h1></div>
+	<div><p id='legendheader'>Habitat Suitability (1 = Least Suitable, 9 = Most Suitable)</p></div>
 	<div>
 		<div class="leg1"><div>1</div></div>
 		<div class="leg2"><div>2</div></div>
@@ -128,7 +137,7 @@ h1 {
         map.on('click', 'Rank 1', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
-                .setHTML('<p>Rank 1!<p>')
+                .setHTML('<p id='Rank1'>Rank 1!<p>')
                 .addTo(map);
         });
 // Rank 2
