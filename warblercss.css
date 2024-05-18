@@ -605,3 +605,7 @@ https://dwellsy.com/rentmaps */
 .leg7 { background-color: #86CB66; }
 .leg8 { background-color: #2DA155; }
 .leg9 { background-color: #006837; }
+#legendtitle {
+    font-size: 15px;
+    margin: 0;
+}
