@@ -10,7 +10,6 @@
   <link rel="icon" type="image/x-icon" href="photos/logonotext.png">
   <!--icon to show on browser tab-->
   <!-- java is used to make it responsive, it uses the onlick based on screen size and switches the nav bar layout from long navbar to hamburger-->
-
 <!--Mapbox-->
 <!--Resources Used:
 	https://www.mapbox.com/install/javascript
@@ -67,6 +66,7 @@ https://dwellsy.com/rentmaps */
 .leg8 { background-color: #2DA155; }
 .leg9 { background-color: #006837; }
 
+h1 {
 #legendheader {
     font-size: 15px;
     margin: 0;
@@ -76,7 +76,7 @@ https://dwellsy.com/rentmaps */
     margin-right: 10px;
     font-size: 15px;
 }
-	
+
 </style>
 </head>
 <body>
@@ -85,12 +85,12 @@ https://dwellsy.com/rentmaps */
 <a href="methodology.html">Methodology</a>
 <a href="solutions.html" class="selected">Solution</a>
 <a href="team.html">Meet the Team</a>
-
 <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
-	
+
 <div id='map'></div>
   <div id="legend">
+	<div><h1>Habitat Suitability (1 = Least Suitable, 9 = Most Suitable)</h1></div>
 	<div><p id='legendheader'>Habitat Suitability (1 = Least Suitable, 9 = Most Suitable)</p></div>
 	<div>
 		<div class="leg1"><div>1</div></div>
@@ -137,6 +137,7 @@ https://dwellsy.com/rentmaps */
         map.on('click', 'Rank 1', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
+                .setHTML('<p>Rank 1!<p>')
                 .setHTML('<p id='Rank1'>Rank 1!<p>')
                 .addTo(map);
         });
@@ -313,7 +314,6 @@ map.on('load', () => {
                 .setHTML('<p>Rank 7!<p>')
                 .addTo(map);
         });
-
 // Rank 8
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
  map.on('load', () => {
