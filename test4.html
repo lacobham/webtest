@@ -130,8 +130,42 @@
                 'fill-opacity': 0.5
             }
         });
-	 'road-label-simple'
  });
+
+	   // Add the Mapbox basemap label layers
+    map.addLayer({
+        'id': 'place-label',
+        'type': 'symbol',
+        'source': 'composite',
+        'source-layer': 'place_label',
+        'layout': {
+            'text-field': ['get', 'name_en'], // Adjust this property according to the language of your map
+            'text-font': ['Open Sans Regular'],
+            'text-size': 12
+        },
+        'paint': {
+            'text-color': '#000000'
+        }
+    });
+	
+//test
+    map.addLayer({
+        'id': 'road-label-simple',
+        'type': 'symbol',
+        'source': 'composite',
+        'source-layer': 'road_label',
+        'layout': {
+            'text-field': ['get', 'name'],
+            'text-font': ['Open Sans Regular'],
+            'text-size': 12
+        },
+        'paint': {
+            'text-color': '#000000'
+        }
+    });
+});
+//test
+	
 // Popup code learned with:
 // https://docs.mapbox.com/mapbox-gl-js/example/popup/
 // https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
