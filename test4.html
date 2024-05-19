@@ -358,6 +358,11 @@ map.on('load', () => {
         addAdditionalSourceAndLayer();
     });
 
+// Changing of basemap
+    // Add source and layer whenever base style is loaded
+    map.on('style.load', () => {
+        addAdditionalSourceAndLayer();
+    });
     const layerList = document.getElementById('menu');
     const inputs = layerList.getElementsByTagName('input');
 
