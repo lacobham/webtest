@@ -84,15 +84,29 @@ map.on('load', () => {
                 'fill-color': '#A50026',
                 'fill-opacity': 0.5
             }
-                // This is the important part of this example: the addLayer
-                // method takes 2 arguments: the layer as an object, and a string
-                // representing another layer's name. If the other layer
-                // exists in the style already, the new layer will be positioned
-                // right before that layer in the stack, making it possible to put
-                // 'overlays' anywhere in the layer stack.
-                // Insert the layer beneath the first symbol layer.
-            },
-            firstSymbolId);
+// Find the layer ID for the basemap labels
+    var layers = map.getStyle().layers;
+    var labelLayerId;
+    for (var i = 0; i < layers.length; i++) {
+        if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
+            labelLayerId = layers[i].id;
+            break;
+        }
+    }
+
+    // Add the polygon GeoJSON layer before the labels layer
+    map.addLayer({
+        'id': 'Rank 1',
+        'type': 'fill',
+        'source': 'Rank 1',
+        'layout': {},
+        'paint': {
+            'fill-color': '#A50026',
+            'fill-opacity': 0.5
+        },
+        'before': labelLayerId
+    });
+});
 // Popup code learned with:
 // https://docs.mapbox.com/mapbox-gl-js/example/popup/
 // https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
