@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--Make responsive, customize basemap/add context layers-->
 <head>
   <title>JLR Solutions</title>
   <link rel="stylesheet" href="warblercss.css" />
@@ -20,16 +21,7 @@
 	https://dwellsy.com/rentmaps -->
 <!-- https://www.mapbox.com/install/javascript -->
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet'/>
-  <style>
-    #menu {
-        position: absolute;
-        background: #efefef;
-        padding: 10px;
-        font-family: 'Open Sans', sans-serif;
-    }
-</style>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
 <div class="topnav" id="myTopnav">
@@ -42,7 +34,7 @@
 	
 <div id='map'></div>
   <div id="legend">
-	<div><p id='legendtitle'>Habitat Suitability (1 = Least Suitable, 9 = Most Suitable)</h1></div>
+	<div><p id='legendtitle'>Habitat Suitability Ranking (1 = Least Suitable, 9 = Most Suitable)</h1></div>
 	<div>
 		<div class="leg1"><div>1</div></div>
 		<div class="leg2"><div>2</div></div>
@@ -54,28 +46,12 @@
 		<div class="leg8"><div>8</div></div>
 		<div class="leg9"><div>9</div></div>
 	</div>
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<div id="menu">
-    <input id="satellite-streets-v12" type="radio" name="rtoggle" value="satellite" checked="checked">
-    <!-- See a list of Mapbox-hosted public styles at -->
-    <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
-    <label for="satellite-streets-v12">satellite streets</label>
-    <input id="light-v11" type="radio" name="rtoggle" value="light">
-    <label for="light-v11">light</label>
-    <input id="dark-v11" type="radio" name="rtoggle" value="dark">
-    <label for="dark-v11">dark</label>
-    <input id="streets-v12" type="radio" name="rtoggle" value="streets">
-    <label for="streets-v12">streets</label>
-    <input id="outdoors-v12" type="radio" name="rtoggle" value="outdoors">
-    <label for="outdoors-v12">outdoors</label>
-</div>
 	</div>
 <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFyYmMiLCJhIjoiY2x3YXhrejYzMGswcTJxcHFwMjZkZmdocCJ9.6HNj3dTSlXvAKuIPoplvrA';
   var map = new mapboxgl.Map({
     container: 'map',
-	style: 'mapbox://styles/mapbox/satellite-streets-v12', // style URL
+    style: 'mapbox://styles/mapbox/streets-v12', // style URL
         center: [-78.6977778, 44.3746760], // starting position
         zoom: 8, // starting zoom
   });
@@ -282,13 +258,12 @@ map.on('load', () => {
         });
 // Rank 8
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
-	map.on('load', () => {
-	function addAdditionalSourceAndLayer() {
+ map.on('load', () => {
         map.addSource('Rank 8', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
             data: 'data/Rank8.geojson'
-	});
+        });
         map.addLayer({
             'id': 'Rank 8',
             'type': 'fill',
@@ -299,8 +274,7 @@ map.on('load', () => {
                 'fill-opacity': 0.5
             }
         });
-	}
-	});
+ });
 // Popup code learned with:
 // https://docs.mapbox.com/mapbox-gl-js/example/popup/
 // https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
@@ -355,25 +329,6 @@ map.on('load', () => {
       }
     }
     map.addControl(new LegendControl(), 'bottom-right');
-    // Add source and layer whenever base style is loaded
-    map.on('style.load', () => {
-        addAdditionalSourceAndLayer();
-    });
-
-// Changing of basemap
-    // Add source and layer whenever base style is loaded
-    map.on('style.load', () => {
-        addAdditionalSourceAndLayer();
-    });
-    const layerList = document.getElementById('menu');
-    const inputs = layerList.getElementsByTagName('input');
-
-    for (const input of inputs) {
-        input.onclick = (layer) => {
-            const layerId = layer.target.id;
-            map.setStyle('mapbox://styles/mapbox/' + layerId);
-        };
-    }
 </script>
 </body>
 <footer class="w3-center w3-padding-16 bottom" id="footer">
