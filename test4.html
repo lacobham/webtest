@@ -55,6 +55,18 @@
         center: [-78.6977778, 44.3746760], // starting position
         zoom: 8, // starting zoom
   });
+
+map.on('load', () => {
+        const layers = map.getStyle().layers;
+        // Find the index of the first symbol layer in the map style.
+        let firstSymbolId;
+        for (const layer of layers) {
+            if (layer.type === 'symbol') {
+                firstSymbolId = layer.id;
+                break;
+            }
+        }
+
 // Rank 1
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
     map.on('load', () => {
@@ -73,6 +85,7 @@
                 'fill-opacity': 0.5
             }
         });
+	firstSymbolId
  });
 // Popup code learned with:
 // https://docs.mapbox.com/mapbox-gl-js/example/popup/
