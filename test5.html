@@ -68,7 +68,6 @@ map.on('load', () => {
                 break;
             }
         }
-
         map.addSource('Rank 1', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
@@ -76,21 +75,14 @@ map.on('load', () => {
         });
         map.addLayer(
             {
-				'id': 'Rank 1',
-				'type': 'fill',
-				'source': 'Rank 1',
-				'layout': {},
-				'paint': {
-					'fill-color': '#A50026',
-					'fill-opacity': 0.5
-				}
-                // This is the important part of this example: the addLayer
-                // method takes 2 arguments: the layer as an object, and a string
-                // representing another layer's name. If the other layer
-                // exists in the style already, the new layer will be positioned
-                // right before that layer in the stack, making it possible to put
-                // 'overlays' anywhere in the layer stack.
-                // Insert the layer beneath the first symbol layer.
+		'id': 'Rank 1',
+		'type': 'fill',
+		'source': 'Rank 1',
+		'layout': {},
+		'paint': {
+			'fill-color': '#A50026',
+			'fill-opacity': 0.5
+		}
             },
             firstSymbolId
         );
@@ -106,7 +98,16 @@ map.on('load', () => {
         });
 // Rank 2
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
- map.on('load', () => {
+map.on('load', () => {
+        const layers = map.getStyle().layers;
+        // Find the index of the first symbol layer in the map style.
+        let firstSymbolId;
+        for (const layer of layers) {
+            if (layer.type === 'symbol') {
+                firstSymbolId = layer.id;
+                break;
+            }
+        }
         map.addSource('Rank 2', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
@@ -121,8 +122,10 @@ map.on('load', () => {
                 'fill-color': '#DE3F2E',
                 'fill-opacity': 0.5
             }
-        });
- });
+            },
+            firstSymbolId
+        );
+    });
 // Popup code learned with:
 // https://docs.mapbox.com/mapbox-gl-js/example/popup/
 // https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
@@ -135,7 +138,17 @@ map.on('load', () => {
     
 // Rank 3
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
- map.on('load', () => {
+map.on('load', () => {
+        const layers = map.getStyle().layers;
+        // Find the index of the first symbol layer in the map style.
+        let firstSymbolId;
+        for (const layer of layers) {
+            if (layer.type === 'symbol') {
+                firstSymbolId = layer.id;
+                break;
+            }
+        }
+	map.on('load', () => {
         map.addSource('Rank 3', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
@@ -150,8 +163,10 @@ map.on('load', () => {
                 'fill-color': '#F88E52',
                 'fill-opacity': 0.5
             }
-        });
- });
+            },
+            firstSymbolId
+        );
+    });
 // Popup code learned with:
 // https://docs.mapbox.com/mapbox-gl-js/example/popup/
 // https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
@@ -164,7 +179,17 @@ map.on('load', () => {
     
 // Rank 4
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
- map.on('load', () => {
+map.on('load', () => {
+        const layers = map.getStyle().layers;
+        // Find the index of the first symbol layer in the map style.
+        let firstSymbolId;
+        for (const layer of layers) {
+            if (layer.type === 'symbol') {
+                firstSymbolId = layer.id;
+                break;
+            }
+        }
+	map.on('load', () => {
         map.addSource('Rank 4', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
@@ -179,8 +204,10 @@ map.on('load', () => {
                 'fill-color': '#FED480',
                 'fill-opacity': 0.5
             }
-        });
- });
+            },
+            firstSymbolId
+        );
+    });
 // Popup code learned with:
 // https://docs.mapbox.com/mapbox-gl-js/example/popup/
 // https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
@@ -194,6 +221,16 @@ map.on('load', () => {
 // Rank 5
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
 map.on('load', () => {
+        const layers = map.getStyle().layers;
+        // Find the index of the first symbol layer in the map style.
+        let firstSymbolId;
+        for (const layer of layers) {
+            if (layer.type === 'symbol') {
+                firstSymbolId = layer.id;
+                break;
+            }
+        }
+	map.on('load', () => {
         map.addSource('Rank 5', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
@@ -208,8 +245,10 @@ map.on('load', () => {
                 'fill-color': '#FFFFBF',
                 'fill-opacity': 0.5
             }
-        });
- });
+            },
+            firstSymbolId
+        );
+    });
 // Popup code learned with:
 // https://docs.mapbox.com/mapbox-gl-js/example/popup/
 // https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
@@ -222,7 +261,17 @@ map.on('load', () => {
     
 // Rank 6
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
- map.on('load', () => {
+map.on('load', () => {
+        const layers = map.getStyle().layers;
+        // Find the index of the first symbol layer in the map style.
+        let firstSymbolId;
+        for (const layer of layers) {
+            if (layer.type === 'symbol') {
+                firstSymbolId = layer.id;
+                break;
+            }
+        }
+	map.on('load', () => {
         map.addSource('Rank 6', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
@@ -237,8 +286,10 @@ map.on('load', () => {
                 'fill-color': '#CCEA83',
                 'fill-opacity': 0.5
             }
-        });
- });
+            },
+            firstSymbolId
+        );
+    });
 // Popup code learned with:
 // https://docs.mapbox.com/mapbox-gl-js/example/popup/
 // https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
@@ -251,7 +302,17 @@ map.on('load', () => {
     
 // Rank 7
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
- map.on('load', () => {
+map.on('load', () => {
+        const layers = map.getStyle().layers;
+        // Find the index of the first symbol layer in the map style.
+        let firstSymbolId;
+        for (const layer of layers) {
+            if (layer.type === 'symbol') {
+                firstSymbolId = layer.id;
+                break;
+            }
+        }
+	map.on('load', () => {
         map.addSource('Rank 7', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
@@ -266,8 +327,10 @@ map.on('load', () => {
                 'fill-color': '#86CB66',
                 'fill-opacity': 0.5
             }
-        });
- });
+            },
+            firstSymbolId
+        );
+    });
 // Popup code learned with:
 // https://docs.mapbox.com/mapbox-gl-js/example/popup/
 // https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
@@ -279,7 +342,17 @@ map.on('load', () => {
         });
 // Rank 8
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
- map.on('load', () => {
+map.on('load', () => {
+        const layers = map.getStyle().layers;
+        // Find the index of the first symbol layer in the map style.
+        let firstSymbolId;
+        for (const layer of layers) {
+            if (layer.type === 'symbol') {
+                firstSymbolId = layer.id;
+                break;
+            }
+        }
+	map.on('load', () => {
         map.addSource('Rank 8', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
@@ -294,8 +367,10 @@ map.on('load', () => {
                 'fill-color': '#2DA155',
                 'fill-opacity': 0.5
             }
-        });
- });
+            },
+            firstSymbolId
+        );
+    });
 // Popup code learned with:
 // https://docs.mapbox.com/mapbox-gl-js/example/popup/
 // https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
@@ -326,20 +401,13 @@ map.on('load', () => {
         map.addLayer(
             {
                 'id': 'Rank 9',
-				'type': 'fill',
-				'source': 'Rank 9',
-				'layout': {},
-				'paint': {
-					'fill-color': '#006837',
-					'fill-opacity': 0.5
-				}
-                // This is the important part of this example: the addLayer
-                // method takes 2 arguments: the layer as an object, and a string
-                // representing another layer's name. If the other layer
-                // exists in the style already, the new layer will be positioned
-                // right before that layer in the stack, making it possible to put
-                // 'overlays' anywhere in the layer stack.
-                // Insert the layer beneath the first symbol layer.
+		'type': 'fill',
+		'source': 'Rank 9',
+		'layout': {},
+		'paint': {
+			'fill-color': '#006837',
+			'fill-opacity': 0.5
+		}
             },
             firstSymbolId
         );
