@@ -1,4 +1,5 @@
 
+
 .imageHeader {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("photos/warblerbackground2.png");
     background-size: cover;
@@ -563,10 +564,9 @@ text-align: center;
 }
 
 /* Interactive web map css */
-<style>
 body { margin: 0; padding: 0; }
 #map { height: 100vh; width: 100%; }
-/* Legend CSS guided by:
+/* Legend CSS learned with:
 https://www.youtube.com/watch?v=Fz5SywxI06M&t=585s
 https://dwellsy.com/rentmaps */
 #legend {
