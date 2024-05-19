@@ -114,7 +114,8 @@
     
 // Rank 3
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
- map.on('style.load', () => {
+ map.on('idle', () => {
+	if (map.isStyleLoaded()) {
         map.addSource('Rank 3', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
@@ -130,7 +131,7 @@
                 'fill-opacity': 0.5
             }
         });
- });
+	}});
 
 	   // Add the Mapbox basemap label layers
     map.addLayer({
