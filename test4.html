@@ -114,7 +114,7 @@
     
 // Rank 3
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
- map.on('idle', () => {
+ map.on('load', () => {
 	if (map.isStyleLoaded()) {
         map.addSource('Rank 3', {
             type: 'geojson',
@@ -132,39 +132,6 @@
             }
         });
 	}});
-
-	   // Add the Mapbox basemap label layers
-    map.addLayer({
-        'id': 'place-label',
-        'type': 'symbol',
-        'source': 'composite',
-        'source-layer': 'place_label',
-        'layout': {
-            'text-field': ['get', 'name_en'], // Adjust this property according to the language of your map
-            'text-font': ['Open Sans Regular'],
-            'text-size': 12
-        },
-        'paint': {
-            'text-color': '#000000'
-        }
-    });
-	
-//test
-    map.addLayer({
-        'id': 'road-label-simple',
-        'type': 'symbol',
-        'source': 'composite',
-        'source-layer': 'road_label',
-        'layout': {
-            'text-field': ['get', 'name'],
-            'text-font': ['Open Sans Regular'],
-            'text-size': 12
-        },
-        'paint': {
-            'text-color': '#000000'
-        }
-    });
-//test
 	
 // Popup code learned with:
 // https://docs.mapbox.com/mapbox-gl-js/example/popup/
