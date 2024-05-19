@@ -2,7 +2,7 @@
 <!--Make responsive, customize basemap/add context layers-->
 <head>
   <title>JLR Solutions</title>
-  <link rel="stylesheet" href="warblercss.css">
+  <link rel="stylesheet" href="warblercss.css" />
     <!--Style sheet for social media icons from:https://www.w3schools.com/howto/howto_css_social_media_buttons.asp-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
@@ -115,7 +115,6 @@
 // Rank 3
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
  map.on('load', () => {
-	if (map.isStyleLoaded()) {
         map.addSource('Rank 3', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
@@ -131,8 +130,7 @@
                 'fill-opacity': 0.5
             }
         });
-	}});
-	
+ });
 // Popup code learned with:
 // https://docs.mapbox.com/mapbox-gl-js/example/popup/
 // https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
