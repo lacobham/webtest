@@ -188,7 +188,6 @@ map.on('load', () => {
                 break;
             }
         }
-	map.on('load', () => {
         map.addSource('Rank 4', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
@@ -229,7 +228,6 @@ map.on('load', () => {
                 break;
             }
         }
-	map.on('load', () => {
         map.addSource('Rank 5', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
@@ -257,7 +255,6 @@ map.on('load', () => {
                 .setHTML('<h5>Rank 5<h5>')
                 .addTo(map);
         });
-    
 // Rank 6
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
 map.on('load', () => {
@@ -270,7 +267,6 @@ map.on('load', () => {
                 break;
             }
         }
-	map.on('load', () => {
         map.addSource('Rank 6', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
@@ -298,7 +294,6 @@ map.on('load', () => {
                 .setHTML('<h5>Rank 6<h5>')
                 .addTo(map);
         });
-    
 // Rank 7
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
 map.on('load', () => {
@@ -311,7 +306,6 @@ map.on('load', () => {
                 break;
             }
         }
-	map.on('load', () => {
         map.addSource('Rank 7', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
@@ -351,7 +345,6 @@ map.on('load', () => {
                 break;
             }
         }
-	map.on('load', () => {
         map.addSource('Rank 8', {
             type: 'geojson',
             // Use a URL for the value for the `data` property.
@@ -379,7 +372,6 @@ map.on('load', () => {
                 .setHTML('<h5>Rank 8<h5>')
                 .addTo(map);
         });
-    
 // Rank 9
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
 map.on('load', () => {
@@ -392,7 +384,6 @@ map.on('load', () => {
                 break;
             }
         }
-
         map.addSource('Rank 9', {
             type: 'geojson',
             data: 'data/Rank9.geojson'
@@ -420,7 +411,6 @@ map.on('load', () => {
                 .setHTML('<h5>Rank 9<h5>')
                 .addTo(map);
         });
-	
 // Legend code learned with:
 // https://www.youtube.com/watch?v=Fz5SywxI06M&t=585s
 // https://dwellsy.com/rentmaps
@@ -437,9 +427,8 @@ map.on('load', () => {
       }
     }
     map.addControl(new LegendControl(), 'bottom-right');
-
 // Adding scale bar: https://docs.mapbox.com/mapbox-gl-js/example/navigation-scale/
-map.addControl(new mapboxgl.ScaleControl(), 'top-right');
+    map.addControl(new mapboxgl.ScaleControl(), 'top-right');
 </script>
 </body>
 <footer class="w3-center w3-padding-16 bottom" id="footer">
