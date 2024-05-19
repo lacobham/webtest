@@ -74,6 +74,7 @@ map.on('load', () => {
 			// Use a URL for the value for the `data` property.
 			data: 'data/Rank1.geojson'
 		});
+	    });
         map.addLayer({
             'id': 'Rank 1',
             'type': 'fill',
@@ -91,9 +92,7 @@ map.on('load', () => {
                 // 'overlays' anywhere in the layer stack.
                 // Insert the layer beneath the first symbol layer.
             },
-            firstSymbolId
-        );
-    });
+            firstSymbolId);
 // Popup code learned with:
 // https://docs.mapbox.com/mapbox-gl-js/example/popup/
 // https://docs.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
