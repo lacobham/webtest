@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--Make responsive, customize basemap/add context layers-->
 <head>
   <title>JLR Solutions</title>
   <link rel="stylesheet" href="warblercss.css" />
@@ -33,7 +34,7 @@
 	
 <div id='map'></div>
   <div id="legend">
-	<div><p id='legendtitle'>Habitat Suitability (1 = Least Suitable, 9 = Most Suitable)</h1></div>
+	<div><p id='legendtitle'>Habitat Suitability Ranking (1 = Least Suitable, 9 = Most Suitable)</h1></div>
 	<div>
 		<div class="leg1"><div>1</div></div>
 		<div class="leg2"><div>2</div></div>
@@ -50,7 +51,7 @@
   mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFyYmMiLCJhIjoiY2x3YXhrejYzMGswcTJxcHFwMjZkZmdocCJ9.6HNj3dTSlXvAKuIPoplvrA';
   var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/light-v11', // style URL
+    style: 'mapbox://styles/mapbox/streets-v12', // style URL
         center: [-78.6977778, 44.3746760], // starting position
         zoom: 8, // starting zoom
   });
@@ -79,7 +80,7 @@
         map.on('click', 'Rank 1', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
-                .setHTML('<h5>Rank 1!<h5>')
+                .setHTML('<h5>Rank 1<h5>')
                 .addTo(map);
         });
 // Rank 2
@@ -107,7 +108,7 @@
         map.on('click', 'Rank 2', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
-                .setHTML('<h5>Rank 2!<h5>')
+                .setHTML('<h5>Rank 2<h5>')
                 .addTo(map);
         });
     
@@ -136,7 +137,7 @@
         map.on('click', 'Rank 3', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
-                .setHTML('<h5>Rank 3!<h5>')
+                .setHTML('<h5>Rank 3<h5>')
                 .addTo(map);
         });
     
@@ -165,7 +166,7 @@
     map.on('click', 'Rank 4', (e) => {
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML('<h5>Rank 4!<h5>')
+            .setHTML('<h5>Rank 4<h5>')
             .addTo(map);
     });
     
@@ -194,7 +195,7 @@ map.on('load', () => {
         map.on('click', 'Rank 5', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
-                .setHTML('<h5>Rank 5!<h5>')
+                .setHTML('<h5>Rank 5<h5>')
                 .addTo(map);
         });
     
@@ -223,7 +224,7 @@ map.on('load', () => {
         map.on('click', 'Rank 6', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
-                .setHTML('<h5>Rank 6!<h5>')
+                .setHTML('<h5>Rank 6<h5>')
                 .addTo(map);
         });
     
@@ -252,7 +253,7 @@ map.on('load', () => {
         map.on('click', 'Rank 7', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
-                .setHTML('<h5>Rank 7!<h5>')
+                .setHTML('<h5>Rank 7<h5>')
                 .addTo(map);
         });
 // Rank 8
@@ -280,7 +281,7 @@ map.on('load', () => {
         map.on('click', 'Rank 8', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
-                .setHTML('<h5>Rank 8!<h5>')
+                .setHTML('<h5>Rank 8<h5>')
                 .addTo(map);
         });
     
@@ -308,7 +309,7 @@ map.on('load', () => {
         map.on('click', 'Rank 9', (e) => {
             new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
-                .setHTML('<h5>Rank 9!<h5>')
+                .setHTML('<h5>Rank 9<h5>')
                 .addTo(map);
         });
 	
