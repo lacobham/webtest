@@ -34,14 +34,12 @@
 	
 <div id='map'></div>
 <div id="menu">
-    <input id="styles/mapbox/laurarbc/clwd06nel01vz01ox8bjlhgce" type="radio" name="rtoggle" value="light" checked="checked">
-    <label for="styles/mapbox/light-v11">Custom</label>
+    <input id="styles/mapbox/streets-v12" type="radio" name="rtoggle" value="streets" checked="checked>
+    <label for="styles/mapbox/streets-v12">Streets</label>
     <input id="styles/mapbox/satellite-streets-v12" type="radio" name="rtoggle" value="satellite">
     <label for="styles/mapbox/satellite-streets-v12">Satellite</label>
     <input id="styles/mapbox/light-v11" type="radio" name="rtoggle" value="light">
     <label for="styles/mapbox/light-v11">Light</label>
-    <input id="styles/mapbox/streets-v12" type="radio" name="rtoggle" value="streets">
-    <label for="styles/mapbox/streets-v12">Streets</label>
 </div>
   <div id="legend">
 	<div><p id='legendtitle'>Habitat Suitability Ranking (1 = Least Suitable, 9 = Most Suitable)</h1></div>
@@ -61,7 +59,7 @@
   mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFyYmMiLCJhIjoiY2x3YXhrejYzMGswcTJxcHFwMjZkZmdocCJ9.6HNj3dTSlXvAKuIPoplvrA';
   var map = new mapboxgl.Map({
     container: 'map',
-	style: 'mapbox://styles/laurarbc/clwd06nel01vz01ox8bjlhgce',
+	style: 'mapbox://styles/mapbox/streets-v12',
         center: [-78.6977778, 44.3746760],
         zoom: 8.2,
   });
