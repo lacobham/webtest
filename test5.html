@@ -51,10 +51,31 @@
   mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFyYmMiLCJhIjoiY2x3YXhrejYzMGswcTJxcHFwMjZkZmdocCJ9.6HNj3dTSlXvAKuIPoplvrA';
   var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/laurarbc/clwd06nel01vz01ox8bjlhgce',
         center: [-78.6977778, 44.3746760],
         zoom: 8.5,
   });
+// Allowing user to change basemap
+var radioButtons = document.getElementsByName('rtoggle');
+radioButtons.forEach(function (radioButton) {
+  radioButton.addEventListener('change', function () {
+    var selectedValue = document.querySelector('input[name="rtoggle"]:checked').value;
+
+    switch (selectedValue) {
+      case 'MapBoxStudio':
+        map.setStyle('mapbox://styles/laurarbc/clwd06nel01vz01ox8bjlhgce');
+        break;
+      default:
+        break;
+    }
+    switch (selectedValue) {
+      case 'SatelliteImagery':
+        map.setStyle('mapbox://styles/laurarbc/clwd06nel01vz01ox8bjlhgce');
+        break;
+      default:
+        break;
+    }
+  });
+});
 // Rank 1
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
 // Putting labels on top of data learned with: https://docs.mapbox.com/mapbox-gl-js/example/geojson-layer-in-stack/
