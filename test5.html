@@ -33,6 +33,20 @@
 </div>
 	
 <div id='map'></div>
+<div id="menu">
+    <input id="satellite-streets-v12" type="radio" name="rtoggle" value="satellite" checked="checked">
+    <!-- See a list of Mapbox-hosted public styles at -->
+    <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
+    <label for="satellite-streets-v12">satellite streets</label>
+    <input id="light-v11" type="radio" name="rtoggle" value="light">
+    <label for="light-v11">light</label>
+    <input id="dark-v11" type="radio" name="rtoggle" value="dark">
+    <label for="dark-v11">dark</label>
+    <input id="streets-v12" type="radio" name="rtoggle" value="streets">
+    <label for="streets-v12">streets</label>
+    <input id="outdoors-v12" type="radio" name="rtoggle" value="outdoors">
+    <label for="outdoors-v12">outdoors</label>
+</div>
   <div id="legend">
 	<div><p id='legendtitle'>Habitat Suitability Ranking (1 = Least Suitable, 9 = Most Suitable)</h1></div>
 	<div>
@@ -53,30 +67,21 @@
     container: 'map',
 	style: 'mapbox://styles/laurarbc/clwd06nel01vz01ox8bjlhgce',
         center: [-78.6977778, 44.3746760],
-        zoom: 8.5,
+        zoom: 8.2,
   });
-// Allowing user to change basemap
-var radioButtons = document.getElementsByName('rtoggle');
-radioButtons.forEach(function (radioButton) {
-  radioButton.addEventListener('change', function () {
-    var selectedValue = document.querySelector('input[name="rtoggle"]:checked').value;
+    // Add source and layer whenever base style is loaded
+    map.on('style.load', () => {
+        addAdditionalSourceAndLayer();
+    });
+    const layerList = document.getElementById('menu');
+    const inputs = layerList.getElementsByTagName('input');
 
-    switch (selectedValue) {
-      case 'MapBoxStudio':
-        map.setStyle('mapbox://styles/laurarbc/clwd06nel01vz01ox8bjlhgce');
-        break;
-      default:
-        break;
+    for (const input of inputs) {
+        input.onclick = (layer) => {
+            const layerId = layer.target.id;
+            map.setStyle('mapbox://styles/mapbox/' + layerId);
+        };
     }
-    switch (selectedValue) {
-      case 'SatelliteImagery':
-        map.setStyle('mapbox://styles/laurarbc/clwd06nel01vz01ox8bjlhgce');
-        break;
-      default:
-        break;
-    }
-  });
-});
 // Rank 1
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
 // Putting labels on top of data learned with: https://docs.mapbox.com/mapbox-gl-js/example/geojson-layer-in-stack/
