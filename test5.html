@@ -81,7 +81,8 @@
 // Rank 1
 // Inserting external geojson files learned with: https://docs.mapbox.com/mapbox-gl-js/example/external-geojson/
 // Putting labels on top of data learned with: https://docs.mapbox.com/mapbox-gl-js/example/geojson-layer-in-stack/
-map.on('load', () => {
+map.off('style.load');
+map.on('styledata', () => {
         const layers = map.getStyle().layers;
         let firstSymbolId;
         for (const layer of layers) {
